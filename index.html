@@ -39,6 +39,14 @@ body{
 <div class="deez" id="deez">
   <h1 class="mb-4 text-white">Temperature Checker</h1>
 
+  <button class="btn btn-light mb-3" data-bs-toggle="collapse" data-bs-target="#instructions">Show Instructions</button>
+
+  <div class="collapse mb-3" id="instructions">
+      <div class="card card-body">
+         <p>Please enter the said values in each box, then click the "check temperature" button to calculate.</p>
+      </div>
+  </div>
+
   <div id="form-box">
     <input type="text" class="form-control" id="Temperature" placeholder="Enter your Temp in °C">
     <input type="text" class="form-control" id="Humidity" placeholder="Enter your %RH">
@@ -47,38 +55,38 @@ body{
 </div>
 
 <script>
-   function checkTemperature(){
+function checkTemperature(){
 
 var temperature = parseFloat(document.getElementById("Temperature").value);
 var humidity = parseFloat(document.getElementById("Humidity").value);
 
-    if(isNaN(temperature)){
-       alert("Please enter a valid temperature.");
-       return;
-    }
+if(isNaN(temperature)){
+   alert("Please enter a valid temperature.");
+   return;
+}
 
-    if(isNaN(humidity)){
-       alert("Please enter a valid humidity.");
-       return;
-    }
+if(isNaN(humidity)){
+   alert("Please enter a valid humidity.");
+   return;
+}
 
 var HeatIndex = temperature + (0.33 * humidity) - 4;
 
-    if(temperature <= 27){
-       alert("You are in the cool zone!");
-    }
-    else if(temperature <= 32){
-            alert("You are in the warm zone!");
-    }
-    else if(temperature <= 37){
-            alert("You are in the hot zone!");
-    }
-    else if(temperature <= 41){
-            alert("You are in the caution zone!");
-    }
-    else{
-         alert("You are in the danger zone!");
-   }
+if(temperature <= 27){
+   alert("You are in the cool zone!");
+}
+else if(temperature <= 32){
+   alert("You are in the warm zone!");
+}
+else if(temperature <= 37){
+   alert("You are in the hot zone!");
+}
+else if(temperature <= 41){
+   alert("You are in the caution zone!");
+}
+else{
+   alert("You are in the danger zone!");
+}
 
 alert("Heat Index: " + HeatIndex.toFixed(2));
 
