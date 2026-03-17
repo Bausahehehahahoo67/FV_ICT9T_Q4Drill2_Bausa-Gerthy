@@ -16,12 +16,15 @@
 }
 
 #form-box{
-    background:white;
+    background: rgba(20, 20, 20, 0.85); /* dark transparent */
+    color: white;
     padding:30px;
     border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,120,0,0.5); /* fire orange glow */
+    box-shadow:0 0 15px rgba(255,100,0,0.6);
     width:300px;
 }
+
 
 #form-box input{
     margin-bottom:10px;
@@ -46,7 +49,7 @@ body{
 
   <div class="collapse mb-3" id="instructions">
       <div class="card card-body">
-         <p>Please enter the said values in each box, then click the "check temperature" button to calculate.</p>
+         <p>Please enter the temperature and the relative humidity in each box, then click the "check temperature" button to calculate.</p>
       </div>
   </div>
 
