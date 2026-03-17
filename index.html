@@ -16,8 +16,7 @@
         }
 
         body{
-            background-color: steelblue;
-
+            background-image: ;
         }
 
 
@@ -29,7 +28,8 @@
   <h1>Temperature Checker</h1>
 
   <div id="form-box">
-    <input type="text" class="form-control" id="Temperature" placeholder="Enter your Temperature via Celsius.">
+    <input type="text" class="form-control" id="Temperature" placeholder="Enter your Temperature.">
+    <input type="text" class="form-control" id="Humidity" placeholder="Enter your Humidity.">
     <button class="btn btn-info mt-2" onclick="checkTemperature()">Check Temperature</button>
   </div>
 </div>
@@ -38,10 +38,15 @@
 function checkTemperature() {
 
     var temperature = parseFloat(document.getElementById("Temperature").value);
-    var humidity = 50;
+    var humidity = parseFloat(document.getElementById("Humidity").value);
 
     if (isNaN(temperature)) {
         alert("Please enter a valid temperature.");
+        return;
+    }
+
+    if (isNaN(humidity)) {
+        alert("Please enter a valid humidity.");
         return;
     }
 
